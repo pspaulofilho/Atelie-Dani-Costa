@@ -17,7 +17,7 @@ document.querySelectorAll('#localizacao .grid > div:first-child').forEach(el => 
 document.querySelectorAll('#sobre [data-aos="fade-left"] > *').forEach((el, i) => { el.dataset.aos = 'fade-up'; el.dataset.aosDelay = i * 90; });
 document.querySelectorAll('#sobre [data-aos="fade-left"]').forEach(el => { el.removeAttribute('data-aos'); });
 if (window.AOS && !reduceMotion) document.querySelectorAll('#galeria figure img').forEach(img => img.classList.add('reveal-img'));
-document.querySelectorAll('a[href="#agendamento"][class*="from-gold"], #booking-form button[type="submit"]').forEach(b => b.classList.add('btn-shine'));
+document.querySelectorAll('a[href="#agendamento"][class*="from-blush"], #booking-form button[type="submit"]').forEach(b => b.classList.add('btn-shine'));
 
 if (window.AOS) AOS.init({
     duration: isPhone ? 650 : 800,
@@ -52,7 +52,7 @@ onScroll();
 (function () {
     const box = document.getElementById('petals');
     if (!box || reduceMotion) return;
-    const colors = ['#f472b6', '#f9a8d4', '#ec4899', '#facc15', '#fde68a', '#e9d5ff'];
+    const colors = ['#f472b6', '#f9a8d4', '#ec4899', '#fbcfe8', '#fce7f3', '#fbcfe8'];
     const total = isPhone ? 14 : 26;
     for (let i = 0; i < total; i++) {
         const el = document.createElement('span');
