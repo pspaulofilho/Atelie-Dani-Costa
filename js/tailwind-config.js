@@ -1,26 +1,26 @@
-// Paleta Outubro Rosa: rosa profundo nas bases e rosa-claro nos destaques.
+// Paleta do ateliê: roxo profundo e detalhes em lilás.
 tailwind.config = {
     theme: {
         extend: {
             colors: {
                 rose: {
-                    50: '#fdf2f8',
-                    100: '#fce7f3',
-                    200: '#fbcfe8',
-                    300: '#f9a8d4',
-                    400: '#f472b6',
-                    500: '#ec4899',
-                    600: '#db2777',
-                    700: '#be185d',
-                    800: '#9d174d',
-                    900: '#831843',
-                    950: '#500724',
+                    50: '#faf5ff',
+                    100: '#f3e8ff',
+                    200: '#e9d5ff',
+                    300: '#d8b4fe',
+                    400: '#c084fc',
+                    500: '#a855f7',
+                    600: '#9333ea',
+                    700: '#7e22ce',
+                    800: '#6b21a8',
+                    900: '#581c87',
+                    950: '#3b0764',
                 },
                 blush: {
-                    400: '#fbcfe8',
-                    500: '#f9a8d4',
-                    600: '#f472b6',
-                    700: '#db2777',
+                    400: '#e9d5ff',
+                    500: '#d8b4fe',
+                    600: '#c084fc',
+                    700: '#9333ea',
                 }
             },
             fontFamily: {
