@@ -52,7 +52,7 @@ onScroll();
 (function () {
     const box = document.getElementById('petals');
     if (!box || reduceMotion) return;
-    const colors = ['#f472b6', '#f9a8d4', '#ec4899', '#fbcfe8', '#fce7f3', '#fbcfe8'];
+    const colors = ['#c084fc', '#d8b4fe', '#a855f7', '#e9d5ff', '#f3e8ff', '#e9d5ff'];
     const total = isPhone ? 14 : 26;
     for (let i = 0; i < total; i++) {
         const el = document.createElement('span');
