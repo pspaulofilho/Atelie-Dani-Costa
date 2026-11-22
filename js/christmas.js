@@ -1,75 +1,104 @@
-/* Decorative only. No storage, network requests, or changes to existing handlers. */
+/* Edição de Natal: aparência somente, sem armazenamento ou dependências. */
 (() => {
     'use strict';
-    if (document.getElementById('adc-xmas-toggle')) return;
+    const root = document.documentElement;
     const header = document.getElementById('header');
-    if (!header) return;
+    if (!header || root.classList.contains('adc-natal')) return;
+    root.classList.add('adc-natal');
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const phone = window.matchMedia('(max-width: 767px)');
     const connection = navigator.connection;
     const layers = [];
-    let enabled = true;
-
-    function layer(parent, extra) {
-        const element = document.createElement('div');
-        element.className = 'adc-xmas-layer ' + extra;
-        element.setAttribute('aria-hidden', 'true');
-        parent.appendChild(element);
-        layers.push(element);
-        return element;
-    }
-    function decoration(parent, text, className) {
+    const visibility = new WeakMap();
+    const limited = () => motion.matches || connection?.saveData || (navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 2);
+    function item(parent, text, className, index = 0) {
         const element = document.createElement('span');
         element.className = className;
         element.textContent = text;
+        element.style.setProperty('--adc-i', index);
         parent.appendChild(element);
         return element;
     }
-    const lights = layer(header, 'adc-xmas-lights');
-    for (let i = 0; i < 18; i++) decoration(lights, '', 'adc-xmas-bulb');
-    const sky = layer(header, 'adc-xmas-sky');
-    decoration(sky, '🎅', 'adc-xmas-santa');
-    const motifs = [['🎄', 'adc-xmas-tree'], ['🎁', 'adc-xmas-gift'], ['🔔', 'adc-xmas-bell'], ['🎀', 'adc-xmas-bow']];
-    // Only the existing positioned sections with ample top/bottom padding.
-    ['inicio', 'servicos', 'sobre', 'agendamento', 'localizacao', 'redes', 'contato'].forEach((id, i) => {
+    function layer(parent, className) {
+        const element = document.createElement('div');
+        element.className = 'adc-xmas-layer ' + className;
+        element.setAttribute('aria-hidden', 'true');
+        parent.appendChild(element);
+        layers.push(element);
+        visibility.set(element, true);
+        return element;
+    }
+    function lights(parent) {
+        const cord = layer(parent, 'adc-xmas-lights');
+        for (let i = 0; i < 24; i++) item(cord, '', 'adc-xmas-bulb', i);
+    }
+    lights(header);
+    const headerTrim = layer(header, 'adc-xmas-header-trim');
+    for (let i = 0; i < 3; i++) item(headerTrim, '', 'adc-xmas-bauble adc-xmas-bauble-' + i, i);
+    const motifs = [
+        ['🎄', '🎁', '🔔', '🎀'], ['🎁', '🔔', '🎄', '🍬'],
+        ['🎀', '✦', '🎁', '🎄'], ['🔔', '🎀', '🎄', '🍬']
+    ];
+    ['inicio', 'servicos', 'galeria', 'sobre', 'agendamento', 'localizacao', 'redes', 'contato'].forEach((id, index) => {
         const section = document.getElementById(id);
         if (!section) return;
-        const box = layer(section, id === 'inicio' ? 'adc-xmas-hero' : '');
-        const [symbol, kind] = motifs[i % motifs.length];
-        decoration(box, symbol, 'adc-xmas-ornament adc-xmas-left ' + kind);
-        decoration(box, '✦', 'adc-xmas-ornament adc-xmas-right adc-xmas-star');
+        const decor = layer(section, 'adc-xmas-section' + (id === 'inicio' ? ' adc-xmas-hero' : ''));
+        item(decor, '', 'adc-xmas-pine adc-xmas-pine-left');
+        item(decor, '', 'adc-xmas-pine adc-xmas-pine-right');
+        item(decor, '', 'adc-xmas-candy');
+        motifs[index % motifs.length].forEach((symbol, i) => item(decor, symbol, 'adc-xmas-ornament adc-xmas-ornament-' + i, i));
+        item(decor, '', 'adc-xmas-wreath');
+        for (let i = 0; i < 3; i++) item(decor, '', 'adc-xmas-bauble adc-xmas-bauble-' + i, i);
     });
+    const hero = document.getElementById('inicio');
+    if (hero) {
+        const shimmer = layer(hero, 'adc-xmas-shimmer');
+        for (let i = 0; i < 12; i++) item(shimmer, '✦', 'adc-xmas-spark', i);
+        const sky = layer(hero, 'adc-xmas-sky');
+        item(sky, '🦌 🦌 🛷🎅', 'adc-xmas-santa');
+        const title = hero.querySelector('h1');
+        if (title) {
+            const greeting = document.createElement('p');
+            greeting.className = 'adc-xmas-greeting';
+            greeting.textContent = 'Um Natal cheio de beleza e encanto! 🎄';
+            title.insertAdjacentElement('afterend', greeting);
+        }
+    }
+    const footer = document.getElementById('contato');
+    if (footer) {
+        lights(footer);
+        const message = document.createElement('p');
+        message.className = 'adc-xmas-footer-message';
+        message.textContent = 'Feliz Natal! Que a beleza e o carinho iluminem seus dias. ✨';
+        footer.appendChild(message);
+    }
     const snow = layer(document.body, 'adc-xmas-snow');
     function makeSnow() {
         snow.replaceChildren();
-        if (motion.matches || connection?.saveData || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2)) return;
-        const count = phone.matches ? 6 : 10;
+        if (limited()) return;
+        const count = phone.matches ? 12 : 22;
         for (let i = 0; i < count; i++) {
-            const flake = decoration(snow, '❄', 'adc-xmas-flake');
-            flake.style.animationDelay = (-i * 3.7) + 's';
-            flake.style.animationDuration = (18 + i % 4 * 3) + 's';
+            const flake = item(snow, i % 3 === 0 ? '✦' : '❄', 'adc-xmas-flake', i);
+            flake.style.setProperty('--adc-duration', (12 + i % 6 * 2) + 's');
+            flake.style.setProperty('--adc-delay', (-i * 2.7) + 's');
         }
     }
-    const toggle = document.createElement('button');
-    toggle.id = 'adc-xmas-toggle';
-    toggle.type = 'button';
-    toggle.textContent = '🎄';
-    toggle.setAttribute('aria-label', 'Decoração de Natal');
-    document.body.appendChild(toggle);
-
     function sync() {
-        const still = motion.matches || connection?.saveData || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
+        root.classList.toggle('adc-natal-still', Boolean(limited()));
+        root.classList.toggle('adc-natal-paused', document.hidden);
         layers.forEach(element => {
-            element.hidden = !enabled;
-            element.classList.toggle('adc-xmas-still', Boolean(still));
-            element.classList.toggle('adc-xmas-paused', document.hidden || !enabled);
+            element.classList.toggle('adc-xmas-paused', document.hidden || !visibility.get(element));
         });
-        toggle.setAttribute('aria-pressed', String(enabled));
-        toggle.title = enabled ? 'Desativar decoração de Natal' : 'Ativar decoração de Natal';
     }
-    toggle.addEventListener('click', () => { enabled = !enabled; sync(); });
-    document.addEventListener('visibilitychange', sync);
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => visibility.set(entry.target, entry.isIntersecting));
+            sync();
+        }, { rootMargin: '40px' });
+        layers.filter(element => element !== snow).forEach(element => observer.observe(element));
+    }
     function adapt() { makeSnow(); sync(); }
+    document.addEventListener('visibilitychange', sync);
     motion.addEventListener('change', adapt);
     phone.addEventListener('change', adapt);
     connection?.addEventListener('change', adapt);

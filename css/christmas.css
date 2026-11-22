@@ -1,40 +1,170 @@
-/* Isolated seasonal layer: no selectors change the site's original styling. */
-.adc-xmas-layer,
-.adc-xmas-layer * { pointer-events: none !important; user-select: none; box-sizing: border-box; }
+/* Sobreposição da paleta, sem alterar a configuração original do Tailwind. */
+html.adc-natal .bg-rose-50 { background-color: #fff9f1; }
+html.adc-natal .selection\:bg-rose-500::selection { background-color: #db5353; }
+html.adc-natal .bg-rose-950\/90 { background-color: #4a0808e6; }
+html.adc-natal .border-rose-800\/50 { border-color: #7f101080; }
+html.adc-natal .border-blush-400\/50 { border-color: #f5d77d80; }
+html.adc-natal .text-rose-100 { color: #fff0e6; }
+html.adc-natal .group:hover .group-hover\:text-blush-400 { color: #f5d77d; }
+html.adc-natal .text-rose-300 { color: #f6ccb4; }
+html.adc-natal .text-rose-200 { color: #ffe2ce; }
+html.adc-natal .hover\:text-blush-400:hover { color: #f5d77d; }
+html.adc-natal .from-blush-500 { --tw-gradient-from: #e9c35a var(--tw-gradient-from-position); --tw-gradient-to: #e9c35a00 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.adc-natal .to-blush-600 { --tw-gradient-to: #d4af37 var(--tw-gradient-to-position); }
+html.adc-natal .text-rose-950 { color: #4a0808; }
+html.adc-natal .bg-rose-950\/95 { background-color: #4a0808f2; }
+html.adc-natal .border-rose-800 { border-color: #7f1010; }
+html.adc-natal .bg-rose-950 { background-color: #4a0808; }
+html.adc-natal .via-blush-500 { --tw-gradient-to: #e9c35a00 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), #e9c35a var(--tw-gradient-via-position), var(--tw-gradient-to); }
+html.adc-natal .bg-rose-900\/60 { background-color: #65101099; }
+html.adc-natal .hover\:bg-rose-800\/80:hover { background-color: #7f1010cc; }
+html.adc-natal .border-rose-600\/50 { border-color: #b71c1c80; }
+html.adc-natal .text-blush-400 { color: #f5d77d; }
+html.adc-natal .bg-rose-900\/40 { background-color: #65101066; }
+html.adc-natal .border-rose-700\/40 { border-color: #9b181866; }
+html.adc-natal .bg-rose-700\/50 { background-color: #9b181880; }
+html.adc-natal .text-rose-600 { color: #b71c1c; }
+html.adc-natal .bg-rose-100 { background-color: #fff0e6; }
+html.adc-natal .from-rose-400 { --tw-gradient-from: #efb898 var(--tw-gradient-from-position); --tw-gradient-to: #efb89800 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.adc-natal .to-rose-600 { --tw-gradient-to: #b71c1c var(--tw-gradient-to-position); }
+html.adc-natal .from-rose-900 { --tw-gradient-from: #651010 var(--tw-gradient-from-position); --tw-gradient-to: #65101000 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.adc-natal .via-rose-950 { --tw-gradient-to: #4a080800 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), #4a0808 var(--tw-gradient-via-position), var(--tw-gradient-to); }
+html.adc-natal .border-rose-800\/60 { border-color: #7f101099; }
+html.adc-natal .bg-rose-600\/10 { background-color: #b71c1c1a; }
+html.adc-natal .group:hover .group-hover\:bg-blush-500\/20 { background-color: #e9c35a33; }
+html.adc-natal .from-rose-700 { --tw-gradient-from: #9b1818 var(--tw-gradient-from-position); --tw-gradient-to: #9b181800 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.adc-natal .to-blush-500 { --tw-gradient-to: #e9c35a var(--tw-gradient-to-position); }
+html.adc-natal .bg-rose-100\/70 { background-color: #fff0e6b3; }
+html.adc-natal .from-rose-600 { --tw-gradient-from: #b71c1c var(--tw-gradient-from-position); --tw-gradient-to: #b71c1c00 var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.adc-natal .to-blush-400 { --tw-gradient-to: #f5d77d var(--tw-gradient-to-position); }
+html.adc-natal .border-blush-400\/40 { border-color: #f5d77d66; }
+html.adc-natal .text-rose-700 { color: #9b1818; }
+html.adc-natal .bg-rose-200 { background-color: #ffe2ce; }
+html.adc-natal .text-rose-800 { color: #7f1010; }
+html.adc-natal .bg-rose-900 { background-color: #651010; }
+html.adc-natal .hover\:bg-rose-950:hover { background-color: #4a0808; }
+html.adc-natal .bg-rose-900\/80 { background-color: #651010cc; }
+html.adc-natal .border-rose-700 { border-color: #9b1818; }
+html.adc-natal .to-rose-400 { --tw-gradient-to: #efb898 var(--tw-gradient-to-position); }
+html.adc-natal .border-rose-700\/60 { border-color: #9b181899; }
+html.adc-natal .text-rose-400 { color: #efb898; }
+html.adc-natal .bg-rose-950\/80 { background-color: #4a0808cc; }
+html.adc-natal .placeholder-rose-400::placeholder { color: #efb898; }
+html.adc-natal .focus\:border-blush-400:focus { border-color: #f5d77d; }
+html.adc-natal .to-rose-950 { --tw-gradient-to: #4a0808 var(--tw-gradient-to-position); }
+html.adc-natal .bg-blush-500\/20 { background-color: #e9c35a33; }
+html.adc-natal .border-blush-400\/30 { border-color: #f5d77d4d; }
+html.adc-natal .to-rose-900 { --tw-gradient-to: #651010 var(--tw-gradient-to-position); }
+html.adc-natal .border-rose-900 { border-color: #651010; }
+/* Destinos vêm após os pontos intermediários para manter os gradientes opacos. */
+html.adc-natal .to-blush-600 { --tw-gradient-to: #d4af37 var(--tw-gradient-to-position); }
+html.adc-natal .to-blush-500 { --tw-gradient-to: #e9c35a var(--tw-gradient-to-position); }
+html.adc-natal .to-blush-400 { --tw-gradient-to: #f5d77d var(--tw-gradient-to-position); }
+html.adc-natal .to-rose-600 { --tw-gradient-to: #b71c1c var(--tw-gradient-to-position); }
+html.adc-natal .to-rose-400 { --tw-gradient-to: #efb898 var(--tw-gradient-to-position); }
+html.adc-natal .to-rose-950 { --tw-gradient-to: #4a0808 var(--tw-gradient-to-position); }
+html.adc-natal .to-rose-900 { --tw-gradient-to: #651010 var(--tw-gradient-to-position); }
+
+/* Edição natalina isolada. Os arquivos e controles originais são preservados. */
+html.adc-natal body { background-color: #fff9f1; }
+html.adc-natal #header { background: #4a0808f5; border-color: #d4af3766; }
+html.adc-natal #header img { outline: 1px solid #d4af37; outline-offset: 3px; box-shadow: 0 0 14px #d4af3733; }
+html.adc-natal #mobile-menu { background: #4a0808fa; border-color: #d4af3766; }
+html.adc-natal .mobile-shortcuts { background: #7f1010; border-color: #d4af37; }
+html.adc-natal .mobile-shortcuts a { color: #fff8e1; }
+html.adc-natal .mobile-shortcuts .book { background: #f1d278; color: #4a0808; }
+html.adc-natal .hero-overlay { background: linear-gradient(180deg, #4a0808cf, #7f101099 48%, #4a0808ee); }
+html.adc-natal .blush-gradient-text { background-image: linear-gradient(110deg, #fff5cb, #d4af37 30%, #fff 50%, #ffd700 70%, #fff5cb); text-shadow: 0 0 32px #ffd70025; }
+html.adc-natal #servicos, html.adc-natal #galeria, html.adc-natal #localizacao { background-color: #fffcf6; }
+html.adc-natal #galeria { position: relative; }
+html.adc-natal #sobre { background-color: #fff0e6; }
+html.adc-natal #agendamento, html.adc-natal #contato { background-color: #4a0808; }
+html.adc-natal #redes { background-image: linear-gradient(135deg, #b71c1c, #4a0808 65%, #7f1010); }
+html.adc-natal .bg-rose-gradient { background: linear-gradient(135deg, #4a0808, #7f1010, #b71c1c); }
+html.adc-natal .service-card { border-color: #d4af3780; box-shadow: 0 5px 22px #7f101008; }
+html.adc-natal .service-card::before { content: '✦'; position: absolute; right: 14px; top: 12px; color: #a87913; font-size: 19px; pointer-events: none; animation: adc-xmas-twinkle 3.8s ease-in-out infinite alternate; }
+html.adc-natal .service-card:nth-child(even)::before { animation-delay: -1.9s; }
+html.adc-natal .service-card:hover { border-color: #b48b24; box-shadow: 0 16px 30px -14px #7f10104d; }
+html.adc-natal #galeria figure { position: relative; border: 1px solid #d4af3766; }
+html.adc-natal #galeria figure::after { content: '✧'; position: absolute; top: 8px; right: 9px; font-size: 23px; line-height: 1; color: #ffe89c; text-shadow: 0 1px 3px #4a0808; pointer-events: none; }
+html.adc-natal .marquee-wrap { background: linear-gradient(90deg, #4a0808, #7f1010, #4a0808); border-color: #d4af3755; }
+html.adc-natal .marquee-item { color: #fff3d7; }
+html.adc-natal .marquee-item i, html.adc-natal .social-go { color: #f1d278; }
+html.adc-natal .map-cta, html.adc-natal #close-photo { background-color: #7f1010; color: #fff; }
+html.adc-natal .map-frame { border-color: #e7cc82; box-shadow: 0 20px 40px -22px #7f101066; }
+html.adc-natal #photo-viewer { background: #4a0808; }
+html.adc-natal .social-text small, html.adc-natal .footer-social small { color: #ffe6c4; }
+html.adc-natal .footer-social { color: #fff3d7; }
+html.adc-natal .swipe-hint { color: #7f1010; }
+html.adc-natal #booking-form button[type='submit'] { background-image: linear-gradient(110deg, #b71c1c, #7f1010); color: #fff8e1; border: 1px solid #d4af37; box-shadow: 0 5px 24px #d4af3720; }
+html.adc-natal #booking-form input:focus, html.adc-natal #booking-form select:focus { border-color: #f1d278; box-shadow: 0 0 0 4px #d4af3733; }
+html.adc-natal #booking-form input:hover, html.adc-natal #booking-form select:hover { border-color: #d4af37; }
+html.adc-natal #scroll-progress { background: linear-gradient(90deg, #b71c1c, #d4af37, #ffd700); }
+html.adc-natal .petal { background: #f1d278 !important; }
+html.adc-natal .pulse-blush, html.adc-natal .fab-whats { animation-name: adc-xmas-ring; }
+html.adc-natal a:focus-visible, html.adc-natal button:focus-visible, html.adc-natal [role='button']:focus-visible { outline-color: #d4af37; }
+
+/* Enfeites nas faixas livres; neve confinada às bordas, sem bloquear toques. */
+.adc-xmas-layer, .adc-xmas-layer * { pointer-events: none !important; user-select: none; box-sizing: border-box; }
 .adc-xmas-layer { position: absolute; inset: 0; overflow: hidden; z-index: 2; contain: layout paint; }
-.adc-xmas-layer[hidden] { display: none !important; }
-.adc-xmas-lights { height: 8px; bottom: auto; display: flex; justify-content: space-around; border-top: 1px solid #b99b62; }
-.adc-xmas-bulb { width: 4px; height: 6px; border-radius: 50%; background: #ffe1a0; animation: adc-xmas-glow 4s ease-in-out infinite alternate; }
-.adc-xmas-bulb:nth-child(3n) { background: #f9a8d4; animation-delay: -2s; }
-.adc-xmas-bulb:nth-child(3n + 1) { background: #9cd2b0; animation-delay: -1s; }
-.adc-xmas-ornament { position: absolute; top: 10px; font-size: 21px; line-height: 26px; opacity: .8; }
-.adc-xmas-left { left: 18px; }
-.adc-xmas-right { right: 18px; }
-.adc-xmas-hero .adc-xmas-ornament { top: auto; bottom: 12px; }
-.adc-xmas-star { color: #bd9246; animation: adc-xmas-glow 5s ease-in-out infinite alternate; }
-.adc-xmas-bell { transform-origin: top center; animation: adc-xmas-sway 6s ease-in-out infinite; }
-.adc-xmas-gift { animation: adc-xmas-float 7s ease-in-out infinite; }
+.adc-xmas-lights { bottom: auto; height: 12px; display: flex; justify-content: space-around; border-top: 2px solid #165b33; z-index: 3; }
+.adc-xmas-bulb { width: 6px; height: 9px; border-radius: 3px 3px 50% 50%; background: #ffd65e; box-shadow: 0 0 8px #ffd70099; animation: adc-xmas-twinkle 2.8s ease-in-out infinite alternate; animation-delay: calc(var(--adc-i) * -.27s); }
+.adc-xmas-bulb:nth-child(3n) { background: #ff7970; box-shadow: 0 0 8px #ff493999; }
+.adc-xmas-bulb:nth-child(3n + 1) { background: #70d894; box-shadow: 0 0 8px #70d89477; }
+.adc-xmas-section { bottom: auto; height: 46px; }
+.adc-xmas-ornament { position: absolute; top: 10px; font: 23px/30px sans-serif; animation: adc-xmas-sway 4.8s ease-in-out infinite; animation-delay: calc(var(--adc-i) * -.8s); transform-origin: 50% 0; }
+.adc-xmas-ornament-0 { left: 14px; }
+.adc-xmas-ornament-1 { left: 52px; top: 15px; font-size: 18px; animation-name: adc-xmas-bob; }
+.adc-xmas-ornament-2 { right: 14px; }
+.adc-xmas-ornament-3 { right: 52px; top: 15px; font-size: 18px; animation-name: adc-xmas-bob; }
+.adc-xmas-pine { position: absolute; top: -9px; width: 98px; height: 26px; border-radius: 50%; background: repeating-linear-gradient(35deg, transparent 0 5px, #165b33 6px 9px, #327548 10px 12px, transparent 13px 16px); opacity: .85; }
+.adc-xmas-pine-left { left: -6px; transform: rotate(10deg); }
+.adc-xmas-pine-right { right: -6px; transform: rotate(-10deg); }
+.adc-xmas-wreath { position: absolute; left: calc(50% - 13px); top: 8px; width: 26px; height: 26px; border: 6px dotted #165b33; border-radius: 50%; box-shadow: 0 0 0 2px #286e3b44; }
+.adc-xmas-wreath::after { content: '🎀'; position: absolute; top: -11px; left: -1px; font: 14px/1 sans-serif; }
+.adc-xmas-bauble { position: absolute; top: 0; left: calc(50% - 49px + var(--adc-i) * 40px); width: 1px; height: 17px; background: #b48b24; transform-origin: 50% 0; animation: adc-xmas-sway 5.5s ease-in-out infinite; animation-delay: calc(var(--adc-i) * -1.2s); }
+.adc-xmas-bauble::after { content: ''; position: absolute; top: 15px; left: -5px; width: 11px; height: 13px; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #fff0d6, #d4af37 35%, #9f7418); }
+.adc-xmas-bauble-1 { display: none; }
+.adc-xmas-bauble-2::after { background: radial-gradient(circle at 30% 25%, #ffd6c9, #b71c1c 35%, #7f1010); }
+.adc-xmas-header-trim { height: 17px; bottom: auto; }
+.adc-xmas-header-trim .adc-xmas-bauble { height: 5px; }
+.adc-xmas-header-trim .adc-xmas-bauble::after { top: 5px; width: 7px; height: 9px; left: -3px; }
+.adc-xmas-candy { position: absolute; top: 12px; right: 88px; width: 9px; height: 25px; border: 3px solid #b71c1c; border-bottom: 0; border-radius: 8px 8px 0 0; background: repeating-linear-gradient(135deg, #fff 0 4px, #b71c1c 4px 7px); transform: rotate(14deg); }
+.adc-xmas-hero { top: 136px; height: 38px; }
+.adc-xmas-hero .adc-xmas-wreath, .adc-xmas-hero .adc-xmas-bauble { display: none; }
+.adc-xmas-sky { top: 136px; height: 36px; bottom: auto; }
+.adc-xmas-santa { position: absolute; left: -130px; top: 2px; white-space: nowrap; font: 21px/30px sans-serif; animation: adc-xmas-visit 34s linear 3s infinite; }
+.adc-xmas-shimmer { z-index: 1; }
+.adc-xmas-spark { position: absolute; left: calc(5% + var(--adc-i) * 8%); top: calc(18% + var(--adc-i) * 5%); color: #ffe49c; font-size: 12px; opacity: .3; animation: adc-xmas-drift 6s ease-in-out infinite; animation-delay: calc(var(--adc-i) * -.6s); }
+.adc-xmas-greeting { margin: -8px auto 24px; color: #ffe7a2; font-size: clamp(.9rem, 3.5vw, 1.15rem); font-family: 'Playfair Display', serif; line-height: 1.6; text-wrap: balance; }
+.adc-xmas-footer-message { position: relative; margin: 32px auto 0; max-width: 36rem; padding: 16px 24px 0; text-align: center; color: #ffe7a2; font: 1rem/1.7 'Playfair Display', serif; text-wrap: balance; }
+.adc-xmas-footer-message::before { content: '✦  🎄  ✦'; display: block; margin-bottom: 8px; color: #d4af37; }
 .adc-xmas-snow { position: fixed; z-index: 61; }
-.adc-xmas-flake { position: absolute; top: -10px; left: 2px; color: #d9bfcf; font: 8px/1 sans-serif; opacity: 0; animation: adc-xmas-fall 18s linear infinite; }
-.adc-xmas-flake:nth-child(even) { left: auto; right: 2px; }
-.adc-xmas-santa { position: absolute; top: 0; left: -24px; font-size: 10px; line-height: 12px; animation: adc-xmas-visit 65s linear infinite; }
-.adc-xmas-sky { height: 12px; bottom: auto; }
-.adc-xmas-paused * { animation-play-state: paused !important; }
-.adc-xmas-still * { animation: none !important; }
-.adc-xmas-still .adc-xmas-flake,
-.adc-xmas-still .adc-xmas-santa { display: none; }
-#adc-xmas-toggle { position: fixed; right: 86px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 65; width: 44px; height: 44px; padding: 0; border: 1px solid #d9b988; border-radius: 50%; background: #fff8f0; color: #500724; font: 22px/1 sans-serif; cursor: pointer; touch-action: manipulation; box-shadow: 0 3px 12px #50072420; }
-#adc-xmas-toggle[aria-pressed="false"] { filter: grayscale(1); background: #fff; }
-#adc-xmas-toggle:focus-visible { outline: 3px solid #be185d; outline-offset: 3px; }
-@keyframes adc-xmas-glow { from { opacity: .45; } to { opacity: .95; } }
-@keyframes adc-xmas-sway { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
-@keyframes adc-xmas-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-@keyframes adc-xmas-fall { 0% { transform: translateY(0); opacity: 0; } 8%,90% { opacity: .65; } 100% { transform: translateY(102vh); opacity: 0; } }
-@keyframes adc-xmas-visit { 0%,82% { transform: translateX(0); opacity: 0; } 83% { opacity: .9; } 99% { opacity: .9; } 100% { transform: translateX(calc(100vw + 48px)); opacity: 0; } }
-@media (min-width: 768px) { .adc-xmas-ornament { font-size: 25px; } }
-@media (max-width: 359px) { #adc-xmas-toggle { right: 80px; } }
-@media (prefers-reduced-motion: reduce), (update: slow) {
-    .adc-xmas-layer * { animation: none !important; }
-    .adc-xmas-flake, .adc-xmas-santa { display: none; }
+.adc-xmas-flake { position: absolute; top: -14px; left: 3px; font: 9px/1 sans-serif; color: #fff; text-shadow: 0 0 2px #7f101066; opacity: 0; animation: adc-xmas-fall var(--adc-duration) linear var(--adc-delay) infinite; }
+.adc-xmas-flake:nth-child(even) { left: auto; right: 3px; }
+.adc-xmas-flake:nth-child(3n) { color: #d4af37; font-size: 8px; }
+.adc-xmas-paused *, .adc-natal-paused .service-card::before { animation-play-state: paused !important; }
+.adc-natal-still .adc-xmas-layer *, .adc-natal-still .service-card::before { animation: none !important; }
+.adc-natal-still .adc-xmas-santa, .adc-natal-still .adc-xmas-flake { display: none; }
+@keyframes adc-xmas-twinkle { from { opacity: .42; } to { opacity: 1; } }
+@keyframes adc-xmas-sway { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+@keyframes adc-xmas-bob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-4px) rotate(4deg); } }
+@keyframes adc-xmas-drift { 0%,100% { transform: translateY(0) scale(.7); opacity: .15; } 50% { transform: translateY(-14px) scale(1.15); opacity: .65; } }
+@keyframes adc-xmas-fall { 0% { transform: translateY(0); opacity: 0; } 8%,90% { opacity: .7; } 100% { transform: translateY(102vh); opacity: 0; } }
+@keyframes adc-xmas-visit { 0% { transform: translateX(0); opacity: 0; } 1%,22% { opacity: 1; } 24% { transform: translateX(calc(100vw + 160px)); opacity: 0; } 25%,100% { transform: translateX(calc(100vw + 160px)); opacity: 0; } }
+@keyframes adc-xmas-ring { 0% { box-shadow: 0 0 0 0 #d4af3755; } 80%,100% { box-shadow: 0 0 0 15px #d4af3700; } }
+@media (min-width: 768px) {
+    .adc-xmas-hero, .adc-xmas-sky { top: 84px; }
+    .adc-xmas-section { height: 58px; }
+    .adc-xmas-ornament { font-size: 29px; top: 14px; }
+    .adc-xmas-ornament-1, .adc-xmas-ornament-3 { font-size: 23px; }
+    .adc-xmas-ornament-0 { left: 28px; } .adc-xmas-ornament-1 { left: 82px; }
+    .adc-xmas-ornament-2 { right: 28px; } .adc-xmas-ornament-3 { right: 82px; }
+    .adc-xmas-pine { width: 150px; }
+    .adc-xmas-flake { font-size: 12px; left: 5px; } .adc-xmas-flake:nth-child(even) { right: 5px; }
 }
-@media print { .adc-xmas-layer, #adc-xmas-toggle { display: none !important; } }
+@media (prefers-reduced-motion: reduce), (update: slow) {
+    .adc-xmas-layer *, html.adc-natal .service-card::before { animation: none !important; }
+    .adc-xmas-santa, .adc-xmas-flake { display: none; }
+}
+@media print { .adc-xmas-layer { display: none !important; } }
