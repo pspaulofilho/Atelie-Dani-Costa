@@ -1,0 +1,40 @@
+/* Isolated seasonal layer: no selectors change the site's original styling. */
+.adc-xmas-layer,
+.adc-xmas-layer * { pointer-events: none !important; user-select: none; box-sizing: border-box; }
+.adc-xmas-layer { position: absolute; inset: 0; overflow: hidden; z-index: 2; contain: layout paint; }
+.adc-xmas-layer[hidden] { display: none !important; }
+.adc-xmas-lights { height: 8px; bottom: auto; display: flex; justify-content: space-around; border-top: 1px solid #b99b62; }
+.adc-xmas-bulb { width: 4px; height: 6px; border-radius: 50%; background: #ffe1a0; animation: adc-xmas-glow 4s ease-in-out infinite alternate; }
+.adc-xmas-bulb:nth-child(3n) { background: #f9a8d4; animation-delay: -2s; }
+.adc-xmas-bulb:nth-child(3n + 1) { background: #9cd2b0; animation-delay: -1s; }
+.adc-xmas-ornament { position: absolute; top: 10px; font-size: 21px; line-height: 26px; opacity: .8; }
+.adc-xmas-left { left: 18px; }
+.adc-xmas-right { right: 18px; }
+.adc-xmas-hero .adc-xmas-ornament { top: auto; bottom: 12px; }
+.adc-xmas-star { color: #bd9246; animation: adc-xmas-glow 5s ease-in-out infinite alternate; }
+.adc-xmas-bell { transform-origin: top center; animation: adc-xmas-sway 6s ease-in-out infinite; }
+.adc-xmas-gift { animation: adc-xmas-float 7s ease-in-out infinite; }
+.adc-xmas-snow { position: fixed; z-index: 61; }
+.adc-xmas-flake { position: absolute; top: -10px; left: 2px; color: #d9bfcf; font: 8px/1 sans-serif; opacity: 0; animation: adc-xmas-fall 18s linear infinite; }
+.adc-xmas-flake:nth-child(even) { left: auto; right: 2px; }
+.adc-xmas-santa { position: absolute; top: 0; left: -24px; font-size: 10px; line-height: 12px; animation: adc-xmas-visit 65s linear infinite; }
+.adc-xmas-sky { height: 12px; bottom: auto; }
+.adc-xmas-paused * { animation-play-state: paused !important; }
+.adc-xmas-still * { animation: none !important; }
+.adc-xmas-still .adc-xmas-flake,
+.adc-xmas-still .adc-xmas-santa { display: none; }
+#adc-xmas-toggle { position: fixed; right: 86px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 65; width: 44px; height: 44px; padding: 0; border: 1px solid #d9b988; border-radius: 50%; background: #fff8f0; color: #500724; font: 22px/1 sans-serif; cursor: pointer; touch-action: manipulation; box-shadow: 0 3px 12px #50072420; }
+#adc-xmas-toggle[aria-pressed="false"] { filter: grayscale(1); background: #fff; }
+#adc-xmas-toggle:focus-visible { outline: 3px solid #be185d; outline-offset: 3px; }
+@keyframes adc-xmas-glow { from { opacity: .45; } to { opacity: .95; } }
+@keyframes adc-xmas-sway { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes adc-xmas-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes adc-xmas-fall { 0% { transform: translateY(0); opacity: 0; } 8%,90% { opacity: .65; } 100% { transform: translateY(102vh); opacity: 0; } }
+@keyframes adc-xmas-visit { 0%,82% { transform: translateX(0); opacity: 0; } 83% { opacity: .9; } 99% { opacity: .9; } 100% { transform: translateX(calc(100vw + 48px)); opacity: 0; } }
+@media (min-width: 768px) { .adc-xmas-ornament { font-size: 25px; } }
+@media (max-width: 359px) { #adc-xmas-toggle { right: 80px; } }
+@media (prefers-reduced-motion: reduce), (update: slow) {
+    .adc-xmas-layer * { animation: none !important; }
+    .adc-xmas-flake, .adc-xmas-santa { display: none; }
+}
+@media print { .adc-xmas-layer, #adc-xmas-toggle { display: none !important; } }
